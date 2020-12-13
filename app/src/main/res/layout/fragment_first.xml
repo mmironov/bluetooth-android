@@ -1,28 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".FirstFragment">
-
-    <TextView
-        android:id="@+id/textview_first"
-        android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_first_fragment"
-        app:layout_constraintBottom_toTopOf="@id/button_first"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:context=".FirstFragment">
 
-    <Button
-        android:id="@+id/button_first"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/pin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="PIN"/>
+        <EditText
+            android:id="@+id/encrypted_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pin"
+            android:textIsSelectable="true"
+            android:hint="Encrypted Settings"/>
+        <Button
+            android:id="@+id/button_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Unlock"
+            app:layout_constraintTop_toBottomOf="@id/encrypted_settings"
+            app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/set_network"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Set network"
+            app:layout_constraintTop_toBottomOf="@id/button_first"
+            app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/connect_to_network"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Connect to network"
+            app:layout_constraintTop_toBottomOf="@id/set_network"
+            app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/list_networks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="List networks"
+            app:layout_constraintTop_toBottomOf="@id/connect_to_network"
+            app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/wi_fi_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Wi Fi Settings"
+            app:layout_constraintTop_toBottomOf="@id/list_networks"
+            app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/connection_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Connection status"
+            app:layout_constraintTop_toBottomOf="@id/wi_fi_settings"
+            app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/last_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Last action"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/connection_status"/>
+        <Button
+            android:id="@+id/start_registration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Start registration"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/last_action"/>
+        <Button
+            android:id="@+id/registration_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Registration status"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/start_registration"/>
+        <EditText
+            android:id="@+id/output"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/registration_status"
+            android:enabled="false"
+            android:inputType="textMultiLine"/>
+        <TextView
+            android:id="@+id/name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/output"
+            android:text="Device name: "/>
+        <TextView
+            android:id="@+id/name_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/name_label"
+            app:layout_constraintTop_toBottomOf="@id/output"
+            android:textIsSelectable="true" />
+        <TextView
+            android:id="@+id/challenge_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_label"
+            android:text="Challenge: "/>
+        <TextView
+            android:id="@+id/challenge_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/challenge_label"
+            app:layout_constraintTop_toBottomOf="@id/name_content"
+            android:textIsSelectable="true" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
